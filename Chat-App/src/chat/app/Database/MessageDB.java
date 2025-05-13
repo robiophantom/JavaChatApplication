@@ -1,7 +1,5 @@
 package chat.app.Database;
 
-import chat.app.Server.Server;
-
 public class MessageDB{
         private String sender;
         private String message;

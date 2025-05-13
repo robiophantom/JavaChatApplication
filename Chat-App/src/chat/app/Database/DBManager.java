@@ -3,9 +3,9 @@ package chat.app.Database;
 import chat.app.Models.Group;
 import chat.app.Models.User;
 import chat.app.Server.Server;
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.PreparedStatement;
-import com.mysql.jdbc.Statement;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -21,14 +21,14 @@ public class DBManager {
         try{  
                 Class.forName("com.mysql.jdbc.Driver");  
                 con = (Connection) DriverManager.getConnection(  
-                "jdbc:mysql://localhost:3306/chatappdb","root","Mrrobot5444");  
+                "jdbc:mysql://127.0.0.1:3306/chatappdb","root","qwerasdf");  
                  System.out.println("Database connection success");
                 } catch(ClassNotFoundException | SQLException e) { System.out.println(e);}  
          } 
 
     public static List<UserDB> GetUserList() throws SQLException{
         String sql = "SELECT * FROM userlist";
-        Statement statement = (Statement) con.createStatement();
+        Statement statement = con.createStatement();
         ResultSet result = statement.executeQuery(sql);
         
         List<UserDB> resultList = new ArrayList<UserDB>();

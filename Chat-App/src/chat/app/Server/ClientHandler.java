@@ -1,6 +1,5 @@
 package chat.app.Server;
 
-import chat.app.Database.MessageDB;
 import chat.app.Models.User;
 import java.io.IOException;
 import java.net.Socket;

@@ -1,6 +1,5 @@
 package chat.app.Models;
 
-import chat.app.Server.Server;
 import java.util.ArrayList;
 import java.util.List;
 

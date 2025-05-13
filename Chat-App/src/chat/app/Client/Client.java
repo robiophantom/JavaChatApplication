@@ -19,22 +19,24 @@ public class Client {
                                  + "/quit ------------------> Close the connection to the server\n"
                                  + "********************************************************************************");
         
-         try (var socket = new Socket("localhost", SERVER_PORT_NO)) {
+         try (var socket = new Socket("127.0.0.1", SERVER_PORT_NO)) {
              
-            var scanner = new Scanner(System.in);
+            try (var scanner = new Scanner(System.in)) {
             
-            var out = new PrintWriter(socket.getOutputStream(), true);
-            
-            // Create new UI for new user
-            ChatUI chatUI = new ChatUI(out);
-            // Create an object for handling client read actions in thread
-            ClientListener conn = new ClientListener(socket, chatUI);
-            // Start the thread
-            new Thread(conn).start();
-            
-            while (true) {
-                out.println(scanner.nextLine());
-            }
+                var out = new PrintWriter(socket.getOutputStream(), true);
+                
+                // Create new UI for new user
+                ChatUI chatUI = new ChatUI(out);
+                // Create an object for handling client read actions in thread
+                ClientListener conn = new ClientListener(socket, chatUI);
+                // Start the thread
+                new Thread(conn).start();
+                
+                while (true) {
+                    out.println(scanner.nextLine());
+                }
+            }            
         }
+     
     }   
 }

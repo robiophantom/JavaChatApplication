@@ -2,7 +2,6 @@ package chat.app.Server;
 
 import chat.app.Models.User;
 import java.io.PrintWriter;
-import java.util.List;
 
 public class MessageManager {
             
