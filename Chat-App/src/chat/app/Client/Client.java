@@ -4,7 +4,6 @@ import chat.app.Views.ChatUI;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Scanner;
-
 public class Client {
     
     private static int SERVER_PORT_NO = 4999;
