@@ -1,4 +1,4 @@
-package chat.app.Views;
+package app.Views;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
